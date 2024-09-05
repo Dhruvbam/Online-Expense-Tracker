@@ -1,5 +1,5 @@
 # Expense Tracker
-
+![image](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss.png)
 ## About
 The **Expense Tracker** was developed as a final project for the CS-3365 Software Engineering class. It is designed to help users keep track of their grocery expenses by allowing them to record purchases and generate detailed monthly reports. This web-based application provides a user-friendly interface for managing and reviewing expenses.
 
@@ -51,4 +51,5 @@ This project was developed by:
 This project provided valuable experience in developing a full-stack web application using Flask. It also reinforced concepts in software engineering, including user interface design, data handling, and report generation.
 
 ### Screenshots / Demo
-![Expense Tracker](https://your-image-link.png)
+![Expense Tracker](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss1.png)
+![Expense Tracker](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss2.png)
