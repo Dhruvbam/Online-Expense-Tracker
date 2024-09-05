@@ -1,7 +1,7 @@
 # Expense Tracker
 ![image](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss.png)
 ## About
-The **Expense Tracker** was developed as a final project for the CS-3365 Software Engineering class. It is designed to help users keep track of their grocery expenses by allowing them to record purchases and generate detailed monthly reports. This web-based application provides a user-friendly interface for managing and reviewing expenses.
+The **Expense Tracker** was developed as a final project for the Software Engineering (CS 3365) class. It is designed to help users keep track of their grocery expenses by allowing them to record purchases and generate detailed monthly reports. This web-based application provides a user-friendly interface for managing and reviewing expenses.
 
 ## Description
 The **Expense Tracker** allows users to log their grocery purchases and generate monthly reports that summarize their spending. Users can input individual purchases or upload a file containing multiple records. The tool helps users keep track of their grocery expenses in an organized and efficient manner.
