@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Expense Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Grocery Expense Tracker</h1>
+        <b1>Click on record purchase to enter your purchase<br></b1>
+        <b2>Then click on back to homepage and enter you name and month<br></b2>
+        <b3>Then click on generate report to generate the report<br><br></b3>
+        <a href="/record"><button>Record Purchase</button></a>
+        <div class="options">
+            <form action="/reports" method="GET">
+                <label for="name"><br>Your Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="month">Month:</label>
+                <input type="text" id="month" name="month" required><br><br>
+                <button type="submit">Generate Report</button>
+            </form>
+          <f1>A project by Atharva Dalvi, Khushi Nankani and Dhruv Maniar</f1>   
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

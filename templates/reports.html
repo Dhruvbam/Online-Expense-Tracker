@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Reports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>View Reports</h1>
+        <div id="report">
+            <h2>Grocery expenses for {{ report_data.name }} for the month of {{ report_data.month }}</h2>
+            <h3>Reported Purchases:</h3>
+            <ul id="purchasesList">
+                <!-- Purchases will be displayed here -->
+                {% for purchase in report_data.recorded_purchases %}
+                    <li>{{ purchase.item }} - ${{ purchase.price }}</li>
+                {% endfor %}
+            </ul>
+            <p>Total Price: ${{ report_data.total_price }}</p>
+        </div>
+        <button onclick="window.location.href='/'">Back to Homepage</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

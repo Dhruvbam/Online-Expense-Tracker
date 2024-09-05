@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.options button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+form label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+form input {
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+#dailyReport, #monthlyReport {
+    margin-top: 20px;
+}
