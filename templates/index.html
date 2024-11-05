@@ -1,30 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grocery Expense Tracker</title>
+    <title>Grocery Expense Tracker and Calculator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Styles copied from calculator.html */
+        .slidecontainer {
+            width: 100%;
+        }
+
+        .slider {
+            appearance: none;
+            width: 100%;
+            height: 5px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+
+        table.table1 {
+            border: 15px outset grey;
+        }
+
+        /* New styles for the expense tracker section */
+        .expense-tracker-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #F9E79F;
+            border-radius: 10px;
+            border: 15px outset grey;
+            text-align: center;
+        }
+
+        .expense-tracker-container h1 {
+            color: #000080;
+            margin-bottom: 20px;
+        }
+
+        .expense-tracker-container label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        .expense-tracker-container input {
+            width: 200px;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .expense-tracker-container button {
+            margin: 15px 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+
+        .project-credit {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Styling for Titles */
+        .title {
+            text-align: center;
+            font-size: 28px;
+            color: #000080;
+            font-weight: bold;
+            margin: 30px 0 10px 0;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Grocery Expense Tracker</h1>
-        <b1>Click on record purchase to enter your purchase<br></b1>
-        <b2>Then click on back to homepage and enter you name and month<br></b2>
-        <b3>Then click on generate report to generate the report<br><br></b3>
+    <!-- Grocery Expense Tracker Title -->
+    <div class="title">Grocery Expense Tracker</div>
+    
+    <!-- Expense Tracker Section -->
+    <div class="expense-tracker-container">
+        <p>Click on record purchase to enter your purchase</p>
+        <p>Then click on back to homepage and enter your name and month</p>
+        <p>Then click on generate report to generate the report</p>
         <a href="/record"><button>Record Purchase</button></a>
-        <div class="options">
+        <div class="options" style="margin-top: 20px;">
             <form action="/reports" method="GET">
-                <label for="name"><br>Your Name:</label>
+                <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" required><br>
                 <label for="month">Month:</label>
                 <input type="text" id="month" name="month" required><br><br>
                 <button type="submit">Generate Report</button>
             </form>
-          <f1>A project by Atharva Dalvi, Khushi Nankani and Dhruv Maniar</f1>   
         </div>
     </div>
 
+    <!-- Financial Calculator Title -->
+    <div class="title">Financial Calculator</div>
+
+    <!-- Calculator Section -->
+    <div class="container">
+        <table class="table1" bgcolor="#F9E79F">
+            <tr>
+                <td align="center">
+                    <table>
+                        <tr style="height:50px">
+                            <td>Number of Payments:</td>
+                            <td><input id="n" style="width:120px;height:20px;font-size:15pt;"></td>
+                            <td style="width:100px"></td>
+                            <td>Interest Rate:</td>
+                            <td><input id="r" style="width:120px;height:20px;font-size:15pt;"></td>
+                            <td>%</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <table>
+                        <tr style="height:50px">
+                            <td>Present Value: $</td>
+                            <td><input id="pv" style="width:120px;height:20px;font-size:15pt;"></td>
+                            <td style="width:5px"></td>
+                            <td>Payment: $</td>
+                            <td><input id="pmt" style="width:120px;height:20px;font-size:15pt;"></td>
+                            <td style="width:5px"></td>
+                            <td>Future Value: $</td>
+                            <td><input id="fv" style="width:120px;height:20px;font-size:15pt;"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <table>
+                        <tr>
+                            <td>Number of Payments per Year:</td>
+                            <td style="width:40px"><span style="float:right;color:blue;font-size:15pt;font-weight:bold" id="ppyt">1</span></td>
+                            <td style="width:20px"></td>
+                            <td style="width:250px">
+                                <div class="slidecontainer">
+                                    <input type="range" min="0" max="6" value="0" class="slider" id="ppy" oninput="ppyP()">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Number of Compounding per Year:</td>
+                            <td style="width:40px"><span style="float:right;color:blue;font-size:15pt;font-weight:bold" id="cpyt">1</span></td>
+                            <td style="width:20px"></td>
+                            <td style="width:250px">
+                                <div class="slidecontainer">
+                                    <input type="range" min="0" max="6" value="0" class="slider" id="cpy" oninput="cpyP()">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <table>
+                        <tr>
+                            <td><label for="ed">End-of-Period Payments</label><input type="radio" id="ed" name="eb" checked></td>
+                            <td style="width:100px"></td>
+                            <td><label for="bg">Beginning-of-Period Payments</label><input type="radio" id="bg" name="eb"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <table>
+                        <tr>
+                            <td><button style="width:90px" type="button" onclick="TVM()">TVM Solver</button></td>
+                            <td style="width:40px"></td>
+                            <td><button style="width:90px" type="button" onclick="npv()">NPV Solver</button></td>
+                            <td style="width:40px"></td>
+                            <td><button style="width:90px" type="button" onclick="irr()">IRR Solver</button></td>
+                            <td style="width:40px"></td>
+                            <td><button style="width:90px" type="button" onclick="reset()">Reset</button></td>
+                            <td style="width:40px"></td>
+                            <td><button style="width:90px" type="button" onclick="self.close()">Close</button></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <table>
+                        <tr>
+                            <td align="center"><button type="button" onclick="clr()">Clear</button></td>
+                            <td align="center"><textarea id="xprsn" rows="2" cols="40" style="font-size:15pt;" placeholder="Expression Area"></textarea></td>
+                            <td align="center"><button type="button" onclick="compute()">=</button></td>
+                            <td align="center"><input id="ansr" style="width:150px;height:30px;font-size:15pt;"></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="project-credit">
+        A project by Atharva Dalvi, Khushi Nankani, and Dhruv Maniar
+    </div>
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        // Add the calculator JavaScript functions here
+        // Copied from calculator.html
+        function irr() {
+            // Your IRR function here
+        }
+
+        function npv() {
+            // Your NPV function here
+        }
+
+        function ppyP() {
+            // Your PPY update function here
+        }
+
+        function cpyP() {
+            // Your CPY update function here
+        }
+
+        function reset() {
+            // Reset function here
+        }
+
+        function clr() {
+            // Clear function here
+        }
+
+        function compute() {
+            // Compute function here
+        }
+
+        function TVM() {
+            // TVM Solver function here
+        }
+    </script>
 </body>
+
 </html>
