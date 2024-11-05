@@ -51,5 +51,6 @@ This project was developed by:
 This project provided valuable experience in developing a full-stack web application using Flask. It also reinforced concepts in software engineering, including user interface design, data handling, and report generation.
 
 ### Screenshots / Demo
+![Expense Tracker](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss3.png)
 ![Expense Tracker](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss1.png)
 ![Expense Tracker](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss2.png)
