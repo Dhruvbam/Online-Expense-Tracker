@@ -1,16 +1,18 @@
 # Online Expense Tracker
 ![image](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss.png)
 ## About
-The **Online Expense Tracker** was developed as a final project for the Software Engineering (CS 3365) class. It is designed to help users keep track of their grocery expenses by allowing them to record purchases and generate detailed monthly reports. This web-based application provides a user-friendly interface for managing and reviewing expenses.
+The **Online Expense Tracker** was developed as a final project for the Software Engineering course (CS 3365). This application is designed to help users efficiently manage and analyze their expenses, with features for recording purchases, generating monthly reports, and utilizing a financial calculator. Through a user-friendly web interface, it provides a comprehensive solution for budgeting and tracking expenses.
 
 ## Description
-The **Online Expense Tracker** allows users to log their grocery purchases and generate monthly reports that summarize their spending. Users can input individual purchases or upload a file containing multiple records. The tool helps users keep track of their grocery expenses in an organized and efficient manner.
+The **Online Expense Tracker** is a web application developed with python and flask that combines expense tracking with financial calculation tools. Users can log grocery and other expenses, generate detailed monthly summaries, and perform essential financial calculations. The application supports individual expense entries and bulk uploads, allowing users to maintain organized records and monitor their spending patterns.
 
 ### Features
-- **Record Purchases**: Users can input items and prices manually.
-- **Generate Reports**: Users can generate a monthly report by entering their name and the selected month.
-- **Upload Monthly List**: Allows users to upload a list of purchases via a CSV or text file.
+- **Record Purchases**: Users can add items and prices manually to maintain an ongoing list of purchases.
+- **Generate Monthly Reports**: Creates a report summarizing all expenses for a selected month, displaying items and the total expenditure.
+- **Upload Bulk Purchases**: Users can upload a CSV or text file with multiple purchases, streamlining data entry.
+- **Financial Calculator**: Offers tools to perform calculations on payment plans, interest rates, and other budgeting metrics directly within the app.
 - **View Reports**: Summarizes purchases and calculates the total expense for a given month.
+- **Interactive Interface**: Developed with HTML, CSS, and JavaScript to ensure a seamless, intuitive user experience.
 
 ### Built With
 This section lists the major frameworks and technologies used in the project:
@@ -48,7 +50,7 @@ This project was developed by:
 - **Khushi Nankani**
 
 ### Learning Outcome
-This project provided valuable experience in developing a full-stack web application using Flask. It also reinforced concepts in software engineering, including user interface design, data handling, and report generation.
+Developing the Online Expense Tracker provided hands-on experience in building a full-stack web application with Flask and Python. It reinforced skills in software engineering, including user-centered design, data handling, financial computation, and report generation. Additionally, this project deepened my understanding of integrating backend logic with a responsive frontend to create practical and accessible financial tools
 
 ### Screenshots / Demo
 ![Expense Tracker](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss3.png)
