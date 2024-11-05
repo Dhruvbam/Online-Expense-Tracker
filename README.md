@@ -54,5 +54,3 @@ Developing the Online Expense Tracker provided hands-on experience in building a
 
 ### Screenshots / Demo
 ![Expense Tracker](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss3.png)
-![Expense Tracker](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss1.png)
-![Expense Tracker](https://github.com/Dhruvbam/Expense-Tracker/blob/main/Images/ss2.png)
